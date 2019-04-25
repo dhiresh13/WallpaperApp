@@ -54,17 +54,20 @@ public class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.Wall
 
     @Override
     public WallpaperViewHolder onCreateViewHolder(ViewGroup parent,int viewType) {
-View view= LayoutInflater.from(mCtx).inflate(R.layout.recyclerview_wallpapers,parent,false);
-return new WallpaperViewHolder(view);
+        View view= LayoutInflater.from(mCtx).inflate(R.layout.recyclerview_wallpapers,parent,false);
+        return new WallpaperViewHolder(view);
     }
 
+
+    //chirag written
+    
 
     public void onBindViewHolder(@NonNull WallpaperViewHolder categoryViewHolder, int position) {
         wallpaper w;
         w = wallpaperList.get(position);
         categoryViewHolder.textView.setText(w.title);
         Glide.with(mCtx)
-                  .load(w.url)
+                .load(w.url)
                 .into(categoryViewHolder.imageView);
         if (w.isFavourite) {
             categoryViewHolder.checkBoxFav.setChecked(true);
@@ -79,27 +82,27 @@ return new WallpaperViewHolder(view);
 
     class WallpaperViewHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
-TextView textView;
-ImageView imageView;
+        TextView textView;
+        ImageView imageView;
         CheckBox checkBoxFav;
         ImageButton buttonShare, buttonDownload;
 
 
 
-    public WallpaperViewHolder(View itemView) {
+        public WallpaperViewHolder(View itemView) {
 
-        super(itemView);
-        textView = itemView.findViewById(R.id.text_view_cat_title);
-        imageView=itemView.findViewById(R.id.image_view);
+            super(itemView);
+            textView = itemView.findViewById(R.id.text_view_cat_title);
+            imageView=itemView.findViewById(R.id.image_view);
 
-        checkBoxFav = itemView.findViewById(R.id.checkbox_fav);
-        buttonShare = itemView.findViewById(R.id.button_share);
-        buttonDownload = itemView.findViewById(R.id.button_download);
+            checkBoxFav = itemView.findViewById(R.id.checkbox_fav);
+            buttonShare = itemView.findViewById(R.id.button_share);
+            buttonDownload = itemView.findViewById(R.id.button_download);
 
-        checkBoxFav.setOnCheckedChangeListener(this);
-        buttonShare.setOnClickListener(this);
-        buttonDownload.setOnClickListener(this);
-    }
+            checkBoxFav.setOnCheckedChangeListener(this);
+            buttonShare.setOnClickListener(this);
+            buttonDownload.setOnClickListener(this);
+        }
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
@@ -123,9 +126,9 @@ ImageView imageView;
                     .asBitmap()
                     .load(w.url)
                     .into(new SimpleTarget<Bitmap>() {
-                        @Override
-                        public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition){
-                                      ((Activity) mCtx).findViewById(R.id.progressbar).setVisibility(View.GONE);
+                              @Override
+                              public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition){
+                                  ((Activity) mCtx).findViewById(R.id.progressbar).setVisibility(View.GONE);
 
                                   Intent intent = new Intent(Intent.ACTION_SEND);
                                   intent.setType("image/*");
@@ -245,7 +248,7 @@ ImageView imageView;
             }
         }
     }
-    }
+}
 
 
 

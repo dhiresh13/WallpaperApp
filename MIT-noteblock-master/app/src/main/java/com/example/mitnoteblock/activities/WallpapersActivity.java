@@ -56,7 +56,7 @@ public class WallpapersActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         progressBar = findViewById(R.id.progressbar);
 
-        dbwallpapers = FirebaseDatabase.getInstance().getReference("images")
+        dbwallpapers = FirebaseDatabase.getInstance().getReference()
                 .child(category);
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             dbFavs = FirebaseDatabase.getInstance().getReference("users")

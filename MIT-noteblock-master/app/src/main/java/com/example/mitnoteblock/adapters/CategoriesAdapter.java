@@ -38,7 +38,7 @@ return new CategoryViewHolder(view);
 Category c=categoryList.get(position);
 categoryViewHolder.textView.setText(c.name);
         Glide.with(mCtx)
-                  .load(c.thumb)
+                  .load(c.thumb).useAnimationPool(true)
                 .into(categoryViewHolder.imageView);
 
     }
