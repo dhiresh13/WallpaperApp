@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MIT noteblock</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_favourites">Favourites</string>
+    <string name="nav_settings">Settings</string>
+    <string name="string_not_Signed_In">Oops! You Have to Sign In First</string>
+    <string name="logout">Logout</string>
+</resources>

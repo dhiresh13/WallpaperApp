@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "982399500056",
+    "firebase_url": "https://wallpaperapp-8bf86.firebaseio.com",
+    "project_id": "wallpaperapp-8bf86",
+    "storage_bucket": "wallpaperapp-8bf86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982399500056:android:c6e9b28adecccc29",
+        "android_client_info": {
+          "package_name": "com.example.mitnoteblock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982399500056-dv96m3s92ughktaeeng3bvq2m070fc1k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mitnoteblock",
+            "certificate_hash": "d35cfc9db1181c9bf23337585be0ec0b9792e80c"
+          }
+        },
+        {
+          "client_id": "982399500056-ffp4e9e0bh8lk8b5qc1p2m5h6qddnm49.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCetvASfJnv86yqm06NUSAgfmugDQI7MyY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982399500056-ffp4e9e0bh8lk8b5qc1p2m5h6qddnm49.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
