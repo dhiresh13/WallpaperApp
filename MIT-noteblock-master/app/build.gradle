@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
+
 
 android {
     compileSdkVersion 28
@@ -20,7 +20,6 @@ android {
 }
 ext {
     library_version = "28.0.0"
-    firebase_google_version="15.0.0"
 }
 
 dependencies {
@@ -31,9 +30,10 @@ dependencies {
     implementation "com.android.support:cardview-v7:$library_version"
     implementation "com.android.support:design:$library_version"
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation "com.google.firebase:firebase-database:$firebase_google_version"
-    implementation "com.google.firebase:firebase-auth:$firebase_google_version"
-    implementation "com.google.android.gms:play-services-auth:$firebase_google_version"
+    implementation "com.google.firebase:firebase-database:16.1.0"
+    implementation "com.google.firebase:firebase-auth:16.2.1"
+    implementation "com.google.android.gms:play-services-auth:16.0.1"
+    implementation "com.google.firebase:firebase-storage:16.1.0"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
@@ -42,3 +42,4 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 }
+apply plugin: 'com.google.gms.google-services'

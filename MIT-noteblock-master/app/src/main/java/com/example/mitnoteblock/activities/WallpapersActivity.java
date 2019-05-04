@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,7 @@ public class WallpapersActivity extends AppCompatActivity {
 
     DatabaseReference dbwallpapers, dbFavs;
     ProgressBar progressBar;
+    FirebaseStorage firebaseStorage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,7 @@ public class WallpapersActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         progressBar = findViewById(R.id.progressbar);
 
-        dbwallpapers = FirebaseDatabase.getInstance().getReference()
+        dbwallpapers = FirebaseDatabase.getInstance().getReference("images")
                 .child(category);
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             dbFavs = FirebaseDatabase.getInstance().getReference("users")
@@ -108,25 +110,19 @@ public class WallpapersActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot wallpapersnapshot : dataSnapshot.getChildren()) {
-
-
                         String id = wallpapersnapshot.getKey();
                         String title = wallpapersnapshot.child("title").getValue(String.class);
                         String desc = wallpapersnapshot.child("desc").getValue(String.class);
                         String url = wallpapersnapshot.child("url").getValue(String.class);
-
-
                         wallpaper w = new wallpaper(id, title, desc, url, category);
                         if (isFavourite(w)) {
                             w.isFavourite = true;
                         }
 
                         wallpaperList.add(w);
-
                     }
                     adapter.notifyDataSetChanged();
                 }
-
             }
 
             @Override
